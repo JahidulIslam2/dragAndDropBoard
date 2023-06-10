@@ -1,0 +1,166 @@
+body {
+    background: rgb(27, 27, 57);
+    background: linear-gradient(90deg, rgba(27, 27, 57, 1) 0%, rgba(50, 50, 117, 0.9948354341736695) 46%, rgba(42, 44, 70, 1) 100%);
+    width: 100%;
+    height: 100%;
+
+}
+
+
+
+.title h2 {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    font-size: xx-large;
+    font-weight: bolder;
+
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    margin: 20px;
+
+}
+
+
+
+.source-container,
+.target-container {
+
+    width: 300px;
+    height: 400px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.input-container {
+
+    position: relative;
+    width: 300px;
+    margin-bottom: 30px;
+    display: block;
+
+    ::-webkit-input-placeholder {
+        color: #cecece;
+    }
+
+}
+
+
+
+.input {
+    outline: none;
+    border: 1px solid white;
+    color: black;
+    height: 40px;
+    width: 100%;
+    max-width: 300px;
+    /* padding: 10px; */
+    /* font-family: $fontFamily; */
+    font-weight: 400;
+    font-size: 16px;
+    /* margin-left: -5px; */
+}
+
+.plus-icon {
+    font-size: 20px;
+    cursor: pointer;
+    /* margin-left: 10px; */
+
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 1.8;
+    cursor: pointer;
+    transition: all 200ms;
+    color: black;
+    will-change: transform;
+
+    &:hover {
+        transform: rotate(180deg);
+    }
+
+
+}
+
+
+
+.draggable {
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin-bottom: 5px;
+    cursor: move;
+
+
+    will-change: transform;
+    /* font-family: $fontFamily; */
+    font-weight: 800;
+    height: 50px;
+    list-style-type: none;
+    margin: 10px;
+    background-color: white;
+    /* color: $blue; */
+    width: 250px;
+    line-height: 3.2;
+    padding-left: 10px;
+    cursor: move;
+    transition: all 200ms;
+    user-select: none;
+    margin: 10px auto;
+    position: relative;
+
+    &:after {
+        content: 'drag me';
+        right: 7px;
+        font-size: 10px;
+        position: absolute;
+        cursor: pointer;
+        line-height: 5;
+        transition: all 200ms;
+        transition-timing-function: cubic-bezier(0.48, 0.72, 0.62, 1.50);
+        transform: translateX(120%);
+        opacity: 0;
+    }
+
+    &:hover {
+        &:after {
+            opacity: 2;
+            transform: translate(0);
+        }
+    }
+}
+
+
+
+.over {
+    transform: scale(1.1, 1.1);
+}
+
+
+.success-message {
+    position: fixed;
+    top: 0;
+    right: 4px;
+    padding: 15px;
+    width: 200px;
+    border-radius: 10px;
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    background-color: #32CD32;
+
+}
+
+@media screen and (max-width: 768px) {
+    .input-container {
+        max-width: 200px;
+    }
+}
