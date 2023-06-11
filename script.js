@@ -63,7 +63,7 @@ function displaySuccessMessage() {
 // Reset the containers to their initial state
 
 function resetContainers() {
-    targetContainer.innerHTML = '';
+    targetContainer.innerHTML = '<h2>Target container</h2>';
     draggables.forEach(draggable => {
         draggable.style.opacity = '1';
         document.querySelector('.source-container').appendChild(draggable);
@@ -102,5 +102,6 @@ function addNewItem() {
 }
 // Event listener for the add button
 addButton.addEventListener('click', addNewItem);
+
 
 
